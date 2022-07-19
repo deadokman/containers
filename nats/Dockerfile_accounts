@@ -1,0 +1,5 @@
+ARG NATS_ACCOUNT_VERSION
+FROM synadia/nats-account-server:$NATS_ACCOUNT_VERSION
+
+COPY ./nats-account-server.conf .
+COPY ./conf ./conf

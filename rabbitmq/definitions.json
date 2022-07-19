@@ -1,0 +1,92 @@
+{
+   "exchanges":[
+      {
+         "_comment": "Эксчейнджер предназначен для приема и распределения событийных сообщений системы",
+         "name": "exchange.events",
+         "vhost": "/",
+         "type": "topic",
+         "durable": true,
+         "auto_delete": false,
+         "internal": false,
+         "arguments": {}
+      },
+      {
+         "_comment": "Эксчейнджер для шины данных",
+         "name": "exchange.bus",
+         "vhost": "/bus",
+         "type": "fanout",
+         "durable": true,
+         "auto_delete": false,
+         "internal": false,
+         "arguments": {}
+      }
+   ],
+   "queues":[],
+   "bindings":[],
+   "users":[
+      {
+         "name":"admin",
+         "password":"RS8bzKSTbBPaKLtF",
+         "tags":"administrator"
+      },
+      {
+         "name":"busUser",
+         "password":"TbrPajLtF",
+         "tags":"bususer"
+      },
+      {
+         "name":"busTestUser",
+         "password":"TbrPajLtF",
+         "tags":"bususer"
+      }
+   ],
+   "vhosts":[
+      {
+         "name":"/"
+      },
+      {
+         "name":"/bus"
+      },
+      {
+         "name":"/busTest"
+      }
+   ],
+   "permissions":[
+      {
+         "user":"admin",
+         "vhost":"/",
+         "configure":".*",
+         "write":".*",
+         "read":".*"
+      },
+      {
+         "user":"admin",
+         "vhost":"/bus",
+         "configure":".*",
+         "write":".*",
+         "read":".*"
+      },
+      {
+         "user":"busUser",
+         "vhost":"/bus",
+         "configure":".*",
+         "write":".*",
+         "read":".*"
+      },
+      {
+         "user":"busTestUser",
+         "vhost":"/busTest",
+         "configure":".*",
+         "write":".*",
+         "read":".*"
+      }
+   ],
+   "topic_permissions":[
+   ],
+   "parameters":[
+   ],
+   "global_parameters":[
+   ],
+   "policies":[
+   ]
+}

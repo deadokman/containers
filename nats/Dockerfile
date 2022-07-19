@@ -1,0 +1,7 @@
+ARG NATS_VERSION
+FROM nats:$NATS_VERSION
+
+COPY ./nats-server.conf .
+COPY ./conf ./conf
+
+EXPOSE 4222 6222 8222
